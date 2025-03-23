@@ -1,0 +1,251 @@
+So ware Engineering Lab 
+Assessment -1 
+Project Title: Hospital Management System 
+SHREEVISHNU 
+22BCE2213 
+1. Analysis and Iden fica on of the suitable process models. 
+1. Scope and Boundaries of the Hospital Management System 
+Project 
+Scope of the Project 
+The hospital management system focuses on simplifying the interac on between pa ents and doctors while 
+maintaining a secure and efficient way to manage appointments, medical records, and billing. The system 
+covers the following 
+Included Parts:(Features) 
+1. User Authen ca on and Role Management 
+ Two Login Types: 
+o Pa ents: Can book appointments, view medical history, and check bills. 
+o Doctors: Can manage appointments, view pa ent histories, and update prescrip ons. 
+ Secure authen ca on system using email and passwords. 
+ Role-based access control to restrict features by user type. 
+2. Appointment Management 
+ Pa ents can select a department and a doctor, choose a date and me slot, and confirm an appointment. 
+ Doctors can view their schedules and see which pa ents have booked specific me slots. 
+ Preven on of double bookings by valida ng appointment availability. 
+3. Medical History Management 
+ Pa ents can view a summary of their medical history, including: 
+o Past appointments. 
+o Previous diagnoses and treatments. 
+o Prescrip ons issued during previous visits. 
+ Doctors can view detailed medical records of individual pa ents to provide informed care. 
+4. Billing and Prescrip on Management 
+ Pa ents can see: 
+o The list of medicines prescribed for their current visit. 
+o Medicine costs. 
+o Total check-up costs, including consulta on fees. 
+ Doctors can: 
+o Update the current prescrip on during the appointment. 
+o Add costs for prescribed medicines. 
+5. Doctor's Dashboard 
+ Doctors can: 
+o View their appointment schedule for the day or week. 
+o Access pa ent details and medical history for upcoming appointments. 
+6. Pa ent Dashboard 
+ Pa ents can: 
+o Manage their appointments (view upcoming, cancel, or reschedule if necessary). 
+o Check their bills and prescrip ons in real me. 
+o Access their past medical records. 
+Boundaries of the Project 
+The following areas are not included in the scope of the project due to me and complexity constraints: 
+1. Pharmacy and Inventory Management: 
+o Managing stock levels of medicines is not part of the system. 
+2. Insurance Integra on: 
+o Processing insurance claims or integra ng insurance providers is out of scope. 
+3. Multi-Language Support: 
+o The system will be designed in one language (e.g., English) and not include translations. 
+Intended Outcomes 
+The project aims to achieve the following outcomes: 
+1. Streamlined Pa ent Experience: 
+o Pa ents can easily book appointments, view their medical history, and access billing details. 
+2. Efficient Doctor Workflows: 
+o Doctors can manage their schedules, access pa ent informa on, and provide updated prescrip ons. 
+3. Data Security and Privacy: 
+o Ensuring pa ent and doctor data is securely stored and accessed only by authorized users. 
+4. Func onality Tes ng: 
+o A reliable system that supports all the described features and passes all test cases for usability and 
+func onality. 
+2.Clarifica on of Goals 
+Primary Objec ves: 
+1. Develop a user-friendly hospital management system with two login types: Pa ent and Doctor. 
+2. Enable pa ents to book appointments, view medical history, and check current bills. 
+3. Allow doctors to manage schedules, access pa ent medical histories, and update prescrip ons. 
+Measurable Target Outcomes: 
+1. Func onality Goals: 
+o Medical history and billing displayed correctly for each pa ent. 
+o Doctors can view schedules and update prescrip ons without errors. 
+2. Usability Goals: 
+o System fully tested with at least 10 pa ents and 5 doctors successfully using the pla orm. 
+3. Security Goals: 
+o Ensure data is securely stored, with encrypted passwords and restricted access to sensi ve 
+informa on. 
+4. Comple on Goals: 
+o Fully deploy the system on a hos ng pla orm. 
+o Submit a final report and demo showcasing all features working as intended. 
+3. Constraints 
+Assess Your Constraints 
+ Timeline: 
+The project must be completed and submi ed by 28 March 2025. 
+ Resource Limita ons: 
+o Skillsets Available: Proficiency in web development (HTML, CSS, JavaScript), backend 
+(Node.js/Django), and database management (MySQL/MongoDB). 
+o Tools Available: Access to coding environments, tes ng tools, and hos ng pla orms. 
+5. Suitable Process Model: Agile Model 
+Jus fica on: 
+1. Itera ve Development: The Agile approach lets you build the system in small chunks, making it easier to 
+manage and adjust as you go. 
+2. Flexibility: It allows you to quickly adapt if any requirements change or new features are needed. 
+3. Regular Feedback: You can gather feedback from users (pa ents and doctors) throughout the development, 
+ensuring the system meets their needs. 
+4. Time Efficiency: Agile helps you stay on track and meet the project deadline by allowing for early tes ng and 
+changes. 
+5. Collabora on: It encourages teamwork and constant communica on, which is great for small teams like 
+yours. 
+6.Github Repository Link 
+h ps://github.com/DEJOKjdc/Hospital-management-website.git 
+2. Work Break-down Structure (Process Based, Product 
+Based, Geographic Based and Role Based) and 
+Esma ons (GANTT chart and PERT chart) 
+WBS PROCESS BASED 
+WBS Product Based 
+WBS Role Based 
+ESTIMATION 
+Product Crea on Gan Charts 
+PERT CHART 
+Path length calcula ons 
+Path 1: Requirement Analysis → Product Design → Frontend → Test A → Launch 
+Total Dura on = 11+11+11+2+4=3911 + 11 + 11 + 2 + 4 = 3911+11+11+2+4=39 days. 
+Path 2: Requirement Analysis → Product Design → Backend Development → Test A → Launch 
+Total Dura on = 11+11+21+2+4=4911 + 11 + 21 + 2 + 4 = 4911+11+21+2+4=49 days. 
+Therefore Cri cal Path is Path 2 (most number of days  ) 
+Cri cal Path: Path 2 (Requirement Analysis → Product Design → Backend Development → Test A → Launch). 
+Cri cal Path Length: 49 days 
+3 SRS 
+Software Requirements  
+Specification 
+For 
+Hospital Management System 
+Version 1.0 approved 
+Prepared by SHREEVISHNU 
+VELLORE INSTITUTE OF TECHNOLOGY,VELLORE 
+10th JAN 2025 
+Table of Contents 
+1. Introduc on -------------------------------------------------------------------1 
+1.1 Purpose -------------------------------------------------------------------1 
+1.2 Document Conven ons----------------------------------------------- 1 
+1.3 Intended Audience and Reading Sugges ons-------------------- 1 
+1.4 Product Scope------------------------------------------------------------ 1 
+1.5 References ----------------------------------------------------------------1 
+2. Overall Descrip on -----------------------------------------------------------2 
+2.1 Product Perspec ve -----------------------------------------------------2 
+2.2 Product Func ons------------------------------------------------------- 2 
+2.3 User Classes and Characteris cs -------------------------------------2 
+2.4 Opera ng Environment------------------------------------------------ 2 
+2.5 Design and Implementa on Constraints ---------------------------2 
+2.6 User Documenta on ----------------------------------------------------2 
+2.7 Assump ons and Dependencies -------------------------------------3 
+3. External Interface Requirements ------------------------------------------3 
+3.1 User Interfaces ------------------------------------------------------------3 
+3.2 Hardware Interfaces -----------------------------------------------------3 
+3.3 Soware Interfaces ------------------------------------------------------3 
+3.4 Communica ons Interfaces --------------------------------------------3 
+4. System Features--------------------------------------------------------------- 4 
+5. Other Nonfunc onal Requirements --------------------------------------4 
+6. Other Requirements ----------------------------------------------------------5 
+Appendices ----------------------------------------------------------------------5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Date 
+Reason for Changes 
+Version 
+Revision History 
+Name 
+Shreevishnu 10-01-2025 
+Ini al Dra 
+1. Introduc on 
+1.1 Purpose 
+1.0 
+The purpose of this document is to define the so ware 
+requirements for the Hospital Management System (HMS). The 
+HMS will simplify interac ons between pa ents and doctors and 
+manage appointments, medical records, and billing securely and 
+efficiently. 
+1.2 Document Conven ons 
+Standards: Bold headings are used for sec ons, while bullet points 
+highlight features. Priori es: High, Medium, and Low are explicitly 
+stated. 
+1.3 Intended Audience and Reading Sugges ons 
+ Developers: Focus on technical requirements. 
+ Project Managers: Review scope and constraints. 
+ Testers: Refer to system features and nonfunc onal requirements. 
+1.4 Product Scope 
+The HMS enables pa ents to book appointments, view medical 
+history, and check bills while allowing doctors to manage 
+schedules, update prescrip ons, and view pa ent histories. The 
+system ensures data privacy and usability, aligning with business 
+goals. 
+1.5 References 
+GitHub Repository: h ps://github.com/DEJOKjdc/Hospital
+management-website.git 
+ Tools: HTML, CSS, JavaScript, Node.js/Django, MySQL/MongoDB. 
+2. Overall Descrip on 
+2.1 Product Perspec ve 
+HMS is a new, standalone product designed for hospital 
+opera ons. It integrates role-based access control for pa ents and 
+doctors and maintains a streamlined workflow. 
+2.2 Product Func ons 
+ User Authen ca on: Secure login for pa ents and doctors. 
+ Appointment Management: Booking, cancella on, and 
+scheduling. 
+ Medical History Management: Viewing and upda ng pa ent 
+records. 
+ Billing and Prescrip on Management: Viewing billing details and 
+prescrip ons. 
+2.3 User Classes and Characteris cs 
+ Pa ents: Moderate tech knowledge; can book appointments and 
+view bills. 
+ Doctors: High-tech exper se; access to schedules and pa ent 
+histories. 
+2.4 Opera ng Environment 
+ Web-based pla orm. 
+ Compa ble with major browsers (Chrome, Firefox). 
+ Deployed on hos ng pla orms. 
+2.5 Design and Implementa on Constraints 
+ Project deadline: 28 March 2025. 
+ Skillset limita ons: Frontend (HTML, CSS, JS), backend 
+(Node.js/Django). 
+2.6 User Documenta on 
+ User manuals for pa ents and doctors. 
+ Online tutorials and FAQs. 
+2.7 Assump ons and Dependencies 
+ Use of MySQL/MongoDB for data management. 
+ Regular internet connec vity. 
+3. External Interface Requirements 
+3.1 User Interfaces 
+ Login screens for pa ents and doctors. 
+ Dashboards for appointments, billing, and history. 
+3.2 Hardware Interfaces 
+ Desktop and mobile compa bility. 
+3.3 So ware Interfaces 
+ Integra on with MySQL/MongoDB databases. 
+4. System Features 
+4.1 Feature: Appointment Management 
+Priority: High 
+Pa ents can book, reschedule, or cancel appointments. Doctors 
+can view schedules. 
+5. Other Nonfunc onal Requirements 
+5.1 Performance Requirements 
+ Response me: Under 2 seconds per transac on. 
+5.2 Safety Requirements 
+ Data recovery mechanisms. 
+5.3 Security Requirements 
+ Encrypted password storage. 
+ Two-factor authen ca on. 
+Appendices 
+ Glossary: HMS - Hospital Management System 
+ Analysis Models: Gan chart and pert chart. 
+ TBD List: To finalize func on tes ng mechanisms. 

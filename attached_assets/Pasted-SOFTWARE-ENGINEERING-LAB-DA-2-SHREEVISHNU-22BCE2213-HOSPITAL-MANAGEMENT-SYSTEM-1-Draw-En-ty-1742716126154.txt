@@ -1,0 +1,148 @@
+SOFTWARE ENGINEERING LAB DA 2 
+SHREEVISHNU 
+22BCE2213 
+HOSPITAL MANAGEMENT SYSTEM 
+1. Draw En ty Rela onship Diagram 
+1. Pa ent En ty 
+A ributes: 
+ PID (Primary Key) – Unique iden fier for each pa ent. 
+ PNAME – Name of the pa ent. 
+ PNUMBER – Contact number of the pa ent. 
+ PADDRESS – Address of the pa ent. 
+ PREVDATA – Previous medical data or history. 
+ DID (Foreign Key) – Refers to the doctor assigned to the pa ent. 
+2. Doctor En ty 
+A ributes: 
+ DID (Primary Key) – Unique iden fier for each doctor. 
+ DNAME – Name of the doctor. 
+ DEPT – Department or specializa on of the doctor. 
+ DNUMBER – Contact number of the doctor. 
+ WORKINGDAYS – Available working days of the doctor. 
+ DADDRESS – Address of the doctor 
+APPOINTMENT: many-to-many rela onship between Doctors and Pa ents. 
+A Pa ent can have mul ple appointments with different Doctors. 
+A Doctor can have mul ple appointments with different Pa ents. 
+2. Draw Context flow diagram (level 0 DFD) 
+Summary of 0-Level DFD – Hospital Management System 
+The Hospital Management System (HMS) efficiently handles pa ent appointments, doctor schedules, billing, 
+and record management. 
+Main En es: Pa ents, Doctors, Admin, and the Hospital Management System. 
+Key Func ons: 
+o Pa ents book/cancel appointments. 
+o Doctors receive appointments, view pa ent info, and provide prescrip ons. 
+o Admin manages scheduling, billing, and system updates. 
+o The system generates medical bills and updates records. 
+System States: 
+1. Idle State: Wai ng for user input. 
+2. Appointment Processing: Booking/cancella on of appointments. 
+3. Doctor Consulta on: Doctors review pa ent info and provide prescrip ons. 
+4. Billing Processing: The system generates bills. 
+5. Admin Management: Admin oversees records and updates. 
+Triggers & Condi ons: 
+Events: Pa ent booking/cancella on, doctor’s response, admin interven on, payment. 
+Condi ons: Valid pa ent ID, doctor availability, payment comple on, admin approval. 
+3. Draw DFD (Both level 1 and level 2) 
+DFD LEVEL 1 
+The 1-Level Data Flow Diagram (DFD) provides a more detailed breakdown of the Hospital Management 
+System (HMS) by expanding the processes from the 0-Level DFD. 
+Main En es: Pa ent, Doctor, Admin, Hospital Management System 
+Key Func ons: 
+1. Booking/Cancella on: Pa ents book or cancel appointments, which are stored in the system. 
+2. Report to Doctor/Admin: Appointment details are forwarded for processing. 
+3. Checkup/Treatment: The doctor conducts consulta ons and treatments. 
+4. Billing & Prescrip on Genera on: The system generates medical prescrip ons and billing details. 
+5. Report to Pa ent/Admin: Finalized reports are shared with pa ents and hospital administrators for 
+record-keeping. 
+System States: 
+1. Wai ng for Appointment: The system is idle un l a booking request is received. 
+2. Appointment Processing: Booking or cancella on is handled. 
+3. Consulta on in Progress: The pa ent undergoes checkups or treatment. 
+4. Billing & Prescrip on Genera on: The system generates and stores billing and prescrip on details. 
+5. Report Delivery: The system sends reports to the pa ent and admin. 
+Triggers & Condi ons: 
+Events: Pa ent ini ates booking/cancella on, doctor updates treatment details, admin processes records. 
+Condi ons: Appointment availability, doctor schedule, pa ent details verifica on, billing confirma on. 
+DFD LEVEL 2 
+1. System Descrip on: 
+The Hospital Management System (HMS) efficiently manages pa ent appointments, doctor interac ons, billing, and 
+administra ve processes. 
+ Main Func onali es: 
+o Booking & Cancella on Process: Pa ents book or cancel appointments. 
+o Appointment Genera on: Ensures doctor availability and schedules appointments. 
+o Checkup/Treatment Process: Doctors conduct pa ent checkups and treatments. 
+o Billing & Prescrip on Process: Bills are generated, and prescrip ons are stored. 
+o Query Process: Pa ents and admins can request reports or query system data. 
+o Admin Management: Handles appointment records, report genera on, and database updates. 
+2. System States: 
+ Idle State: The system is wai ng for pa ent interac ons (e.g., booking/cancella on requests). 
+ Booking Processing: Appointment requests are verified, stored, or canceled. 
+ Appointment Confirma on: Successful bookings transi on into scheduled appointments. 
+ Doctor Consulta on: Pa ents visit doctors for checkups/treatment. 
+ Billing & Prescrip on State: The system generates pa ent bills and prescrip ons. 
+ Report Genera on: The admin processes reports for bookings, billing, or queries. 
+3. Events (Triggers for State Changes): 
+ Pa ent Requests: Booking, cancella on, or report queries. 
+ Doctor Ac ons: Updates on pa ent checkups, treatments, or prescrip ons. 
+ Admin Inputs: Managing bookings, billing, and report genera on. 
+ Payment Processing: Comple on of billing for services. 
+4. Ac ons Performed: 
+ During Booking/Cancella on: The system verifies doctor availability and stores appointment data. 
+ During Checkup/Treatment: The doctor updates pa ent treatment details. 
+ During Billing: Bills and prescrip ons are generated and stored. 
+ During Queries: The system retrieves reports for pa ents/admins. 
+5. Guards (Condi ons for Transi ons): 
+ Appointment Availability: Booking transi ons only occur if a doctor is available. 
+ Valid Cancella on Requests: Cancella ons are processed only for exis ng bookings. 
+ Billing Comple on: Treatment-related processes transi on to billing only a er checkup comple on. 
+ Admin Approval: Some ac ons, like report genera on, require admin approval. 
+4. State Transi on Diagram (For any 1 user story) 
+User Story: Pa ent Books an Appointment 
+Scenario: A pa ent wants to book an appointment 
+with a doctor through the hospital management 
+system. 
+States and Transi ons 
+1. Idle State (Start) 
+ The system is in an idle state, wai ng for user interac on. 
+2. Pa ent Ini ates Booking 
+ The pa ent starts the appointment booking process. 
+3. Check Doctor Availability 
+ The system checks if the requested doctor is available at the preferred me. 
+ If available, move to the next state. 
+ If not available, prompt the pa ent to choose another me or doctor. 
+4. Enter Pa ent Details 
+ The pa ent provides necessary informa on (Name, Contact, Medical History, etc.). 
+5. Confirm Appointment 
+ The pa ent confirms the booking. 
+ If payment is required, proceed to payment. 
+ If not, directly schedule the appointment. 
+6. Payment Processing (If Applicable) 
+ The pa ent makes a payment if required. 
+7. Appointment Scheduled 
+ The system successfully books the appointment and sends confirma on. 
+8. Cancella on (Op onal) 
+ The pa ent can cancel before the scheduled me. 
+ The system updates the appointment status accordingly. 
+9. End State 
+ The process ends either a er a successful booking or cancella on. 
+STATE TRANSITION DIAGRAM PATIENT 
+EXTRA STATE TRANSITIOMN DIAGRAM DOCTOR 
+Use Case Diagram for Hospital Management System (Without Admin) 
+Actors: 
+Pa ent – Can book/cancel appointments, view prescrip ons, and pay bills. 
+Doctor – Can check appointments, prescribe medicines, and update reports. 
+Use Cases & Their Explana on: 
+1. Booking (Include: Register & Input Pa ent Info)-A pa ent needs to provide basic details (registra on) before 
+booking an appointment. 
+2. Cancella on-Allows a pa ent to cancel a previously booked appointment. 
+3. View Billing (Extend: Prescrip on)-Pa ents can check billing details, which may include charges based on 
+prescrip ons. 
+4. Make Payment-Pa ents can make payments for consulta ons, treatments, or medica ons. 
+5. Check Appointments-Doctors can review their upcoming appointments with pa ents. 
+6. Prescribe Medicines-Doctors can prescribe medicines based on pa ent diagnoses. 
+7. Update Reports-Doctors can update pa ent records, including diagnosis and treatment details. 
+Rela onships: 
+1. <<Include>> Rela onships: 
+Booking requires Register/Input Pa ent Info as a mandatory step. 
+Cancella on may involve referencing stored pa ent informa on. 
+2. <<Extend>> Rela onships: 
+View Billing can be extended to include Prescrip on details if necessary. 

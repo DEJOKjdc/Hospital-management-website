@@ -1,0 +1,141 @@
+Hospital Management System - Website Architecture
+Based on your documents, here's the architecture of your Hospital Management System (HMS), including how the login page should work and how the overall system functions.
+
+1. System Overview
+The HMS will help hospitals manage appointments, medical records, prescriptions, and billing efficiently. It will have three types of users:
+
+Patients: Book/cancel appointments, view prescriptions, pay bills.
+
+Doctors: Manage schedules, view patient histories, update prescriptions.
+
+Admin: Manage doctors, oversee reports, handle billing.
+
+2. Website Pages and Features
+(a) Login & Authentication Page
+User roles: Patients, Doctors, Admin.
+
+Login fields: Email, Password.
+
+Signup for Patients: New patients can register with personal details.
+
+Forgot Password: Users can reset their passwords via email.
+
+Secure Authentication: Role-based access control (patients cannot access doctor/admin features).
+
+(b) Patient Dashboard
+Book Appointment: Select department, doctor, date & time.
+
+View Medical History: Past appointments, prescriptions, diagnoses.
+
+View and Pay Bills: Check outstanding bills, make payments online.
+
+Cancel Appointment: Cancel a booked appointment before the scheduled time.
+
+Notifications: Appointment reminders, prescription updates.
+
+(c) Doctor Dashboard
+View Appointments: See patient schedules.
+
+Patient Records: Access past medical history and prescriptions.
+
+Update Reports: Add new diagnoses, prescriptions.
+
+Prescribe Medicines: Generate prescriptions for patients.
+
+(d) Admin Panel
+Manage Doctors: Add, update, remove doctors.
+
+Generate Reports: View hospital-wide statistics and records.
+
+Oversee Billing: Manage payments and due records.
+
+3. How the Website Works
+Step 1: User Authentication
+Users (patients, doctors, admins) log in based on their role.
+
+New patients must sign up before booking an appointment.
+
+Step 2: Appointment Booking
+Patients select Doctor → Date → Time Slot.
+
+System checks availability before confirming.
+
+Confirmation message is sent via email/SMS.
+
+Step 3: Doctor Consultation
+Doctors access patient details before the appointment.
+
+Doctors add reports & prescriptions after consultation.
+
+Step 4: Billing & Payments
+System generates bills based on consultation and medicines.
+
+Patients view bills and make payments online.
+
+Step 5: Admin Management
+Admins manage doctors, appointments, and reports.
+
+The system generates daily/monthly hospital reports.
+
+4. System Architecture
+Frontend (Client-Side)
+Technologies: HTML, CSS, JavaScript, React.js.
+
+UI Components:
+
+Login, Dashboard, Forms, Tables for reports, Payment interface.
+
+Backend (Server-Side)
+Technologies: Node.js (Express.js) / Django.
+
+Key functionalities:
+
+Handle authentication (JWT-based login system).
+
+Store and manage patient/doctor data.
+
+Process payments securely.
+
+Database (Storage)
+Technology: MySQL / MongoDB.
+
+Entities:
+
+Users (Patients, Doctors, Admin)
+
+Appointments
+
+Medical Records
+
+Prescriptions
+
+Payments & Billing
+
+5. State Transition & Workflow
+Idle State → Patient logs in.
+
+Appointment Booking → System checks doctor availability.
+
+Doctor Consultation → Updates records & prescriptions.
+
+Billing & Payment → Patient pays, system updates status.
+
+6. Security & Compliance
+Encrypted Passwords: Secure authentication using bcrypt.
+
+Role-Based Access: Patients, doctors, admins have separate permissions.
+
+Data Privacy: Patient records are confidential.
+
+7. Development Approach
+Agile Development Model: Features built in iterations.
+
+Tech Stack:
+
+Frontend: React.js
+
+Backend: Node.js / Django
+
+Database: MySQL / MongoDB
+
+Authentication: JWT (JSON Web Token

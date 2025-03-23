@@ -1,0 +1,114 @@
+SOFTWARE ENGINEERING LAB DA 3 
+SHREEVISHNU  
+22BCE2213 
+State Transi on Diagram  
+Pa ent Booking Appointment(Single story) 
+States and Transi ons 
+1. Ini al State (Black Circle) 
+o The system starts from the ini al state. 
+2. Register 
+o A user must Sign Up and provide informa on to register. 
+3. Sign In 
+o A er successful registra on, the user can log in to the system. 
+4. Book Appointment 
+o A er logging in, the user can search for available appointments and proceed with 
+booking. 
+5. Booked Successfully 
+o If the booking is completed, the system reaches the final state (black circle with 
+outline). 
+6. Cancel Appointment (Op onal Path) 
+o The user may choose to cancel the appointment, transi oning back to the ini al 
+state before rebooking. 
+1 USECASE DIAGRAM 
+The Use Case Diagram represents different func onali es available in the system for Pa ents, 
+Doctors, and Admins. 
+Actors & Their Use Cases 
+1. Pa ent 
+ Booking (Includes Register: Input Pa ent Info) → Pa ents must register before booking an 
+appointment. 
+ Cancella on → Allows pa ents to cancel an appointment. 
+ View Billing (Extends View Prescrip on) → Pa ents can view their billing details, including 
+charges for treatments. 
+ Make Payment → Pa ents can make payments for consulta ons, treatments, or medica ons. 
+2. Doctor 
+ Check Appointments → Doctors can review their scheduled pa ent appointments. 
+ Prescribe Medicines → Doctors can provide prescrip ons for pa ents. 
+ Update Reports → Doctors update pa ent records, including diagnosis and treatment details. 
+3. Admin 
+ Manage Doctors → Admins can add, update, or remove doctors from the system. 
+ View Reports → Admins can access system reports related to hospital opera ons. 
+Rela onships 
+ <<Include>> Rela onships: 
+o Booking requires Register: Input Pa ent Info before scheduling an appointment. 
+o Cancella on may involve referencing stored pa ent details. 
+ <<Extend>> Rela onships: 
+o View Billing can be extended to include View Prescrip on for details about medicine 
+costs. 
+2 Class diagram 
+1. Pa ent Class 
+ A ributes: 
+o PID: int (Pa ent ID) 
+o PName: string (Pa ent Name) 
+o PNumber: int (Phone Number) 
+o PAddress: string (Address) 
+o PrevData: string (Previous Medical Data) 
+o DID: int (Doctor ID for assigned doctor) 
+ Methods: 
+o +searchDoctor() 
+o +bookAppointment() 
+o +cancelAppointment() 
+o +viewPrescrip on() 
+o +makePayment() 
+ Rela onships: 
+o 1..* with Doctor (A pa ent can visit mul ple doctors). 
+o 1..* with Billing (A pa ent may have mul ple bills). 
+2. Doctor Class 
+ A ributes: 
+o DID: int (Doctor ID) 
+o DName: string (Doctor Name) 
+o Dept: string (Department) 
+o DNumber: int (Doctor's Contact Number) 
+o DAddress: string (Doctor's Address) 
+o WorkingDays: string (Doctor's Working Days) 
+ Methods: 
+o +viewAppointments() 
+o +prescribeMedicine() 
+o +updateReport() 
+ Rela onships: 
+o 1..* with Pa ent (A doctor can have mul ple pa ents). 
+3. Admin Class 
+ A ributes: 
+o AID: int (Admin ID) 
+o Name: string (Admin Name) 
+o Job Number: int (Admin Job ID) 
+ Methods: 
+o +viewReports() 
+o +manageDoctors() 
+ Rela onships: 
+o 1..* with Doctor (An admin manages mul ple doctors). 
+o 1..* with Billing (Admin oversees mul ple billing records). 
+4. Billing Class 
+ A ributes: 
+o BillID: int (Billing ID) 
+o PID: int (Pa ent ID) 
+o Status: bool (Bill Status: Paid/Unpaid) 
+o Amount: float (Individual Charge) 
+o Quan ty: int (Number of Services/Items) 
+o Total Amount: float (Total Payment) 
+o Supplier: string (Medical Supplier) 
+o Order Status: string (Order Processing Status) 
+ Methods: 
+o +generateBill() 
+o +viewBill() 
+ Rela onships: 
+o 1..* with Pa ent (A pa ent may have mul ple bills). 
+o 1..1 with Payment (Each bill has one corresponding payment). 
+5. Payment Class 
+ A ributes: 
+o PaymentID: int (Unique Payment ID) 
+o BillID: int (Linked Bill ID) 
+o PaymentStatus: bool (Status: Paid/Unpaid) 
+ Methods: 
+o +makePayment() 
+ Rela onships: 
+o 1..1 with Billing (Each payment corresponds to one bill). 
