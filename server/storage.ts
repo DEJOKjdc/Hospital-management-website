@@ -390,13 +390,17 @@ export class MemStorage implements IStorage {
     return patient;
   }
 
-  async updatePatient(id: number, data: Partial<Patient>): Promise<Patient | undefined> {
+  async updatePatient(id: number, data: Partial<Patient>): Promise<PatientWithUser | undefined> {
     const patient = this.patients.get(id);
     if (!patient) return undefined;
 
+    const user = this.users.get(patient.userId);
+    if (!user) return undefined;
+
     const updatedPatient = { ...patient, ...data };
     this.patients.set(id, updatedPatient);
-    return updatedPatient;
+    
+    return { ...updatedPatient, user };
   }
 
   // Appointment methods
