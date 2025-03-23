@@ -1,9 +1,9 @@
-import { defineConfig } from "vite";
+import { defineConfig, createServer } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// Fixing `__dirname` in ES module
+// Fix `__dirname` in ES module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -19,8 +19,8 @@ export default defineConfig({
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
-    rollupOptions: {
-      external: ["vite.ts", "server/vite.ts"], // Prevents missing exports error
-    },
   },
 });
+
+// Export createServer for external use
+export { createServer };
