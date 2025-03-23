@@ -2,7 +2,7 @@ import express, { type Express } from "express";
 import fs from "fs";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-import { defineConfig, createServer } from "vite";
+import { createServer } from "../vite"; // Ensure correct path to vite.ts
 import { nanoid } from "nanoid";
 
 const __filename = fileURLToPath(import.meta.url);
