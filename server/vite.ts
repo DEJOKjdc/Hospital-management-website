@@ -1,9 +1,13 @@
 import express, { type Express } from "express";
 import fs from "fs";
-import path from "path";
-import { createServer as createViteServer } from "vite";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+import { createServer as createViteServer, createLogger, type ViteDevServer } from "vite";
 import { type Server } from "http";
 import { nanoid } from "nanoid";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
@@ -17,30 +21,37 @@ export function log(message: string, source = "express") {
 
 export async function setupVite(app: Express, server: Server) {
   const vite = await createViteServer({
-    server: { middlewareMode: true },
-    appType: "custom",
+    server: {
+      middlewareMode: true,
+      hmr: { server },
+      allowedHosts: true
+    },
+    appType: 'custom',
+    base: '/'
   });
 
   app.use(vite.middlewares);
   app.use("*", async (req, res, next) => {
+    const url = req.originalUrl;
     try {
-      const url = req.originalUrl;
-      const template = await fs.promises.readFile(
-        path.resolve("client/index.html"),
+      const template = fs.readFileSync(
+        path.resolve(__dirname, "../client/index.html"),
         "utf-8"
       );
       const html = await vite.transformIndexHtml(url, template);
       res.status(200).set({ "Content-Type": "text/html" }).end(html);
     } catch (e) {
+      vite.ssrFixStacktrace(e as Error);
       next(e);
     }
   });
+  return vite;
 }
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve("dist/public");
+  const distPath = path.resolve(__dirname, "../dist/public");
   if (!fs.existsSync(distPath)) {
-    throw new Error("Build the client first");
+    throw new Error("Could not find the build directory");
   }
   app.use(express.static(distPath));
   app.use("*", (_req, res) => {
