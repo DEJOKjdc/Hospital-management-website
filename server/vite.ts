@@ -10,12 +10,11 @@ import { nanoid } from "nanoid";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Import Vite config safely
-import viteConfig from "../vite.config.js"; // Ensure this file exports defineConfig
+// Import Vite config correctly
+import viteConfig from "../vite.config.js"; // Ensure this file exports defineConfig properly
 
 const viteLogger = createLogger();
 
-// Custom logging function
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
@@ -32,7 +31,7 @@ export async function setupVite(app: Express, server: Server): Promise<ViteDevSe
   try {
     const vite = await createViteServer({
       ...viteConfig,
-      configFile: false, // Prevent reloading the config file
+      configFile: false,
       customLogger: {
         ...viteLogger,
         error: (msg, options) => {
